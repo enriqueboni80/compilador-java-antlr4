@@ -1,0 +1,15 @@
+grammar MeuCompilador;
+
+program : statement+ EOF ; // A regra principal é 'program', que consiste em uma ou mais 'statement'
+
+statement : 'print' expression ';'
+          | ID '=' expression ';'
+          ;
+
+expression : INT
+           | ID
+           ;
+
+ID  : [a-zA-Z]+ ;
+INT : [0-9]+ ;
+WS  : [ \t\r\n]+ -> skip ; // Ignora espaços em branco

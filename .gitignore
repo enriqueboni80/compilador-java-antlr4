@@ -1,0 +1,41 @@
+# ----------------------------------------------------------------------
+# Maven/Gradle/Build Artifacts
+# Ignorar arquivos gerados pelo build (target)
+# ----------------------------------------------------------------------
+/target/
+pom.xml.tag
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+build/
+
+# ----------------------------------------------------------------------
+# ANTLR Generated Files
+# Classes Java geradas pelo plugin ANTLR (Normalmente dentro de target)
+# ----------------------------------------------------------------------
+# Se o ANTLR gerar fora de 'target', ignore a pasta de classes geradas.
+# Exemplo (se estiver em 'src'):
+# /src/main/java/org/example/meucompilador/parser/*.java 
+
+# ----------------------------------------------------------------------
+# IDE Files (IntelliJ IDEA, VS Code, etc.)
+# ----------------------------------------------------------------------
+# IntelliJ IDEA (Pode variar, mas .idea é o principal)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# VS Code
+.vscode/
+
+# Logs e arquivos de execução
+*.log
+*.class
+/bin/

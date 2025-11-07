@@ -2,7 +2,6 @@ package org.example.meucompilador;
 
 import org.example.meucompilador.parser.MeuCompiladorBaseVisitor;
 import org.example.meucompilador.parser.MeuCompiladorParser;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;

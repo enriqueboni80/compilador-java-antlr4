@@ -1,4 +1,5 @@
-# 🧠 Projeto: Compilador - Linguagem "MeuCompilador"
+# 🧠 Projeto: "MeuCompilador"
+#### Aluno: Enrique Santos Bonifácio Leite (Una Nov/2025)
 
 Este projeto implementa um **compilador simples** desenvolvido com **ANTLR4**, capaz de interpretar e validar uma linguagem criada do zero — a **"MeuCompilador"**.  
 A linguagem inclui **variáveis tipadas, estruturas condicionais, laços de repetição, operações matemáticas e comandos de entrada/saída**.
@@ -9,11 +10,10 @@ A linguagem inclui **variáveis tipadas, estruturas condicionais, laços de repe
 
 1. [📘 Visão Geral](#-visão-geral)
 2. [🧠 Estrutura da Linguagem](#-estrutura-da-linguagem)
-3. [🧱 Compilação](#-compilação)
-4. [💻 Execução do Projeto](#-execução-do-projeto)
-5. [🧪 Exemplos de Teste](#-exemplos-de-teste)
-6. [📂 Estrutura de Pastas](#-estrutura-de-pastas)
-7. [🔗 Referência do Compilador ANTLR](#-referência-do-compilador-antlr)
+3. [🧱 Compilação e Execução](#-compilação-e-execução)
+4. [🧪 Exemplos de Teste](#-exemplos-de-teste)
+5. [📂 Estrutura de Pastas](#-estrutura-de-pastas)
+6. [🔗 Referência do Compilador ANTLR](#-referência-do-compilador-antlr)
 
 ---
 
@@ -45,9 +45,11 @@ A gramática completa da linguagem está definida no arquivo:
 
 A linguagem suporta três tipos de variáveis:
 
-```antlr
-tipo_var : 'inteiro' | 'real' | 'texto' ;
 
+**'inteiro' | 'real' | 'texto' ;**
+
+
+```
 Exemplo:
 inteiro a = 10;
 real b = 2.5;
@@ -97,7 +99,35 @@ fimenquanto
 escreva("Fim da execução!");
 ```
 ---
-## 🧱 Compilação
+## 🧪 Exemplos de Teste
+
+### 🧩 Exemplo 1 — Operações básicas
+```
+inteiro a = 5;
+inteiro b = 10;
+inteiro c = a + b;
+escreva(c);
+```
+### 🔁 Exemplo 2 — Estrutura de repetição
+```
+inteiro i = 0;
+enquanto (i < 5) faca:
+    escreva(i);
+    i = i + 1;
+fimenquanto
+```
+### Exemplo 3 — Estrutura condicional
+```
+inteiro x = 8;
+
+se (x > 10) entao:
+    escreva("Maior que 10");
+senao:
+    escreva("Menor ou igual a 10");
+fimse
+```
+---
+## 🧱 Compilação e Execução
 
 O projeto utiliza o **ANTLR4** para gerar automaticamente o analisador léxico e sintático da linguagem.  
 Os arquivos gerados pelo ANTLR são salvos dentro do diretório:  
@@ -119,5 +149,24 @@ Para gerar e compilar o projeto, execute os comandos abaixo no terminal, dentro 
 ```bash
 mvn install
 mvn compile
+```
+
+### 📂 Estrutura de Pastas
+```        
+meucompilador/
+├── pom.xml
+├── README.md
+├── src/
+│   ├── main/
+│   │   ├── antlr4/org/example/meucompilador/parser/
+│   │   │   └── MeuCompilador.g4          # Definição da gramática ANTLR
+│   │   ├── generated-sources/            # Cópia dos arquivos gerados (somente para visualização)
+│   │   └── java/
+│   │       └── org/example/meucompilador/     # Código-fonte principal do compilador
+│   └── test/
+│       └── java/                          # Códigos de teste e exemplos
+└── target/
+    └── generated-sources/
+        └── antlr4/                        # Arquivos Java gerados automaticamente pelo ANTLR
 ```
 ---

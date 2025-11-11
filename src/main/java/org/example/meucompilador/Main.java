@@ -9,22 +9,21 @@ import org.example.meucompilador.parser.MeuCompiladorParser;
 public class Main {
     public static void main(String[] args) throws Exception {
         String source =
-                "inteiro idade = 25;\n" +
-                        "real altura = 1.75;\n" +
-                        "escreva(\"Iniciando checagem...\");\n" +
-
-                        "se (idade > 18) entao:\n" +
-                        "escreva(altura * 2);\n" +
-                        "enquanto (idade < 30) faca:\n" +
-                        "idade = idade + 1;\n" +
-                        "fimenquanto\n" +
-                        "senao:\n" + // Inclui o senao:
-                        "escreva(\"Menor de idade\");\n" +
-                        "fimse\n" + // Fecha o SE
-
-                        "para i de 1 ate 10 faca:\n" +
-                        "escreva(i);\n" +
-                        "fimpara\n";
+                "inteiro idade = 25;\n"
+                        + "real altura = 1.75;\n"
+                        + "escreva(altura);\n"
+                        + "escreva(\"Iniciando checagem...\");\n"
+                        + "se (idade > 18) entao:\n"
+                        + "escreva(altura * 2);\n"
+                        + "enquanto (idade < 30) faca:\n"
+                        + "idade = idade + 1;\n"
+                        + "fimenquanto\n"
+                        + "senao:\n"
+                        + "escreva(\"Menor de idade\");\n"
+                        + "fimse\n"
+                        + "para i de 1 ate 10 faca:\n"
+                        + "escreva(i);\n"
+                        + "fimpara\n";
 
         // 1. CRIA O LEXER
         MeuCompiladorLexer lexer = new MeuCompiladorLexer(CharStreams.fromString(source));

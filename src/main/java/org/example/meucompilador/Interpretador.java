@@ -15,6 +15,10 @@ public class Interpretador extends MeuCompiladorBaseVisitor<Object> {
     // Usado para o comando 'leia'
     private final Scanner scanner = new Scanner(System.in);
 
+    public Object getVariavel(String nome) {
+        return memoria.get(nome);
+    }
+
     // ----------------------------------------------------------------------------------
     // 1. Variáveis e Atribuição (Inclui Verificações Diferenciais)
     // ----------------------------------------------------------------------------------
@@ -37,7 +41,7 @@ public class Interpretador extends MeuCompiladorBaseVisitor<Object> {
         }
 
         memoria.put(id, valor);
-        return null;
+        return valor;
     }
 
     @Override
@@ -52,7 +56,7 @@ public class Interpretador extends MeuCompiladorBaseVisitor<Object> {
 
         Object valor = visit(ctx.expressao());
         memoria.put(id, valor);
-        return null;
+        return valor;
     }
 
     // ----------------------------------------------------------------------------------
@@ -64,7 +68,7 @@ public class Interpretador extends MeuCompiladorBaseVisitor<Object> {
         Object valor = visit(ctx.expressao());
 
         // GERAÇÃO DA SAÍDA: Imprime o resultado no console
-        System.out.println(">> SAÍDA: " + valor);
+        System.out.println(valor);
 
         return null;
     }
@@ -80,7 +84,7 @@ public class Interpretador extends MeuCompiladorBaseVisitor<Object> {
 
         // Simplesmente lê o input como String e armazena.
         // A lógica de tipos seria complexa para um exemplo rápido.
-        System.out.print(">> ENTRADA: Digite valor para '" + id + "': ");
+        System.out.print("'" + id + "': ");
         String input = scanner.nextLine();
 
         try {
@@ -200,8 +204,9 @@ public class Interpretador extends MeuCompiladorBaseVisitor<Object> {
     // Por enquanto, o foco está na saída de dados e atribuições.
 
     // ----------------------------------------------------------------------------------
-// 5. Estrutura de Repetição 'PARA' (Nova Implementação)
-// ----------------------------------------------------------------------------------
+
+    // 5. Estrutura de Repetição 'PARA' (Nova Implementação)
+    // ----------------------------------------------------------------------------------
 
     @Override
     public Object visitPara_stmt(MeuCompiladorParser.Para_stmtContext ctx) {

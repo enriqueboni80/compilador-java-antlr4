@@ -164,7 +164,8 @@ meucompilador/
 │   │   └── java/
 │   │       └── org/example/meucompilador/     # Código-fonte principal do compilador
 │   └── test/
-│       └── java/                          # Códigos de teste e exemplos
+│       └── java/      
+|           └──  TesteCompilador.java      # Códigos de teste e exemplos     
 └── target/
     └── generated-sources/
         └── antlr4/                        # Arquivos Java gerados automaticamente pelo ANTLR

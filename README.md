@@ -162,12 +162,18 @@ Antes de compilar, certifique-se de ter instalado:
 
 Para gerar e compilar o projeto, execute os comandos abaixo no terminal, dentro do diretório raiz do projeto:
 
-```bash
+```
 mvn install
 mvn compile
+```
+### 🏗️ Rodando os tests
+
+Comando para executar os tests:
+
+```
 mvn test
 ```
-
+---
 ### 📂 Estrutura de Pastas
 ```        
 meucompilador/

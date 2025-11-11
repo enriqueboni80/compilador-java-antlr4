@@ -165,6 +165,7 @@ Para gerar e compilar o projeto, execute os comandos abaixo no terminal, dentro 
 ```bash
 mvn install
 mvn compile
+mvn test
 ```
 
 ### 📂 Estrutura de Pastas

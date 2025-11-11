@@ -56,6 +56,23 @@ expressao
     | atomo
     ;
 
+// PALAVRAS RESERVADAS
+SE          : 'se' ;
+SENAO       : 'senao' ;
+ENTAO       : 'entao' ;
+ENQUANTO    : 'enquanto' ;
+PARA        : 'para' ;
+ATE         : 'ate' ;
+PASSO       : 'passo' ;
+FIMSE       : 'fimse' ;
+FIMPARA     : 'fimpara' ;
+FIMENQUANTO : 'fimenquanto' ;
+ESCREVA     : 'escreva' ;
+LEIA        : 'leia' ;
+INTEIRO     : 'inteiro' ;
+REAL        : 'real' ;
+TEXTO       : 'texto' ;
+
 // MENOR PARTE - ÁTOMO
 atomo
     : ID

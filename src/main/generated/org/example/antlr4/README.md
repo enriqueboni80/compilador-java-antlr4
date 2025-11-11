@@ -6,4 +6,4 @@ Esse caminho de saída foi configurado **intencionalmente** para que os arquivos
 - exemplos de teste,
 - e a forma de execução da aplicação,
 
-consulte o **[README.md principal](../README.md)** localizado na raiz do projeto.
+consulte o **[README.md principal](../../../../../README.md)** localizado na raiz do projeto.

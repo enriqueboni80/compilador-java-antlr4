@@ -1,5 +1,5 @@
 # 🧠 Projeto: "MeuCompilador"
-#### Aluno: Enrique Santos Bonifácio Leite (Una Nov/2025)
+#### Aluno: Enrique Santos Bonifácio Leite | RA: 32523421 | (Una Nov/2025)
 
 Este projeto implementa um **compilador simples** desenvolvido com **ANTLR4**, capaz de interpretar e validar uma linguagem criada do zero — a **"MeuCompilador"**.  
 A linguagem inclui **variáveis tipadas, estruturas condicionais, laços de repetição, operações matemáticas e comandos de entrada/saída**.

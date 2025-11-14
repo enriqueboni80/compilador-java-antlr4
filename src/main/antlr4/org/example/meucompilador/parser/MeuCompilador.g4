@@ -1,7 +1,7 @@
 grammar MeuCompilador;
 
 // INÍCIO DE TUDO
-programa : comando* EOF;
+programa : bloco EOF;
 comando
     : declaracao_var ';'
     | atribuicao ';'
@@ -56,6 +56,15 @@ expressao
     | atomo
     ;
 
+// MENOR PARTE - ÁTOMO
+atomo
+    : ID
+    | NUMERO_INTEIRO
+    | NUMERO_REAL
+    | VALOR_TEXTO
+    | '(' expressao ')'
+    ;
+
 // PALAVRAS RESERVADAS
 SE          : 'se' ;
 SENAO       : 'senao' ;
@@ -73,13 +82,14 @@ INTEIRO     : 'inteiro' ;
 REAL        : 'real' ;
 TEXTO       : 'texto' ;
 
-// MENOR PARTE - ÁTOMO
-atomo
-    : ID
-    | NUMERO_INTEIRO
-    | NUMERO_REAL
-    | VALOR_TEXTO
-    | '(' expressao ')'
+
+// COMENTÁRIOS (antes do WS)
+COMENTARIO_LINHA
+    : '//' ~[\r\n]* -> skip
+    ;
+
+COMENTARIO_BLOCO
+    : '/*' .*? '*/' -> skip
     ;
 
 // DEFINIÇÃO DOS TOKENS | REGEX DOS ATOMOS

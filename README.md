@@ -110,7 +110,7 @@ Essas palavras representam comandos, estruturas de controle e tipos de dados da 
 | **Estruturas Condicionais** | `se`, `senao`, `entao`, `fimse` | Representam blocos condicionais (if/else). |
 | **Estruturas de Repetição** | `enquanto`, `fimenquanto`, `para`, `ate`, `passo`, `fimpara` | Representam laços de repetição e controle de fluxo. |
 
-🔸 **Observação:**  
+🔸 Observação:  
 Todas as palavras reservadas são **sensíveis a minúsculas** (case-sensitive).  
 Por exemplo, `se` é válido, mas `SE` ou `Se` não são reconhecidos pela gramática.
 ---

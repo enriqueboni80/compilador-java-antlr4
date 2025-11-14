@@ -103,16 +103,15 @@ escreva("Fim da execução!");
 A linguagem **MeuCompilador** define um conjunto de **palavras reservadas** que não podem ser utilizadas como identificadores (nomes de variáveis, funções, etc.).  
 Essas palavras representam comandos, estruturas de controle e tipos de dados da linguagem.
 
+* Todas as palavras reservadas são **sensíveis a minúsculas** (case-sensitive).  
+  Por exemplo, `se` é válido, mas `SE` ou `Se` não são reconhecidos pela gramática.
+
 | Categoria | Palavras Reservadas | Descrição |
 |------------|----------------------|------------|
 | **Tipos de Dados** | `inteiro`, `real`, `texto` | Definem o tipo da variável declarada. |
 | **Entrada e Saída** | `leia`, `escreva` | Permitem interação com o usuário. |
 | **Estruturas Condicionais** | `se`, `senao`, `entao`, `fimse` | Representam blocos condicionais (if/else). |
 | **Estruturas de Repetição** | `enquanto`, `fimenquanto`, `para`, `ate`, `passo`, `fimpara` | Representam laços de repetição e controle de fluxo. |
-
-Observação:  
-Todas as palavras reservadas são **sensíveis a minúsculas** (case-sensitive).  
-Por exemplo, `se` é válido, mas `SE` ou `Se` não são reconhecidos pela gramática.
 ---
 
 ## 🧪 Exemplos de Teste

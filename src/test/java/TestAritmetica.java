@@ -32,4 +32,39 @@ public class TestAritmetica {
         Object total = interpretador.getVariavel("total");
         assertEquals(20.0, ((Number) total).floatValue(), 0.001);
     }
+
+    @Test
+    public void deveAplicarPrecedenciaMultiplicacaoAdicao() throws Exception {
+        String codigo = ""
+                + "inteiro resultado = 2 + 3 * 4;"; // Esperado: 2 + (3 * 4) = 14
+        ParseTree tree = parse(codigo);
+        Interpretador interpretador = new Interpretador();
+        interpretador.visit(tree);
+        Object resultado = interpretador.getVariavel("resultado");
+        assertEquals(14, ((Number) resultado).intValue());
+    }
+
+    @Test
+    public void deveAplicarPrecedenciaComParenteses() throws Exception {
+        String codigo = ""
+                + "inteiro resultado = (2 + 3) * 4;"; // Esperado: (2 + 3) * 4 = 20
+        ParseTree tree = parse(codigo);
+        Interpretador interpretador = new Interpretador();
+        interpretador.visit(tree);
+        Object resultado = interpretador.getVariavel("resultado");
+        assertEquals(20, ((Number) resultado).intValue());
+    }
+
+    @Test
+    public void deveAplicarPrecedenciaDivisaoSubtracaoEUnario() throws Exception {
+        String codigo = ""
+                + "inteiro a = 2;\n"
+                + "inteiro b = 5;\n"
+                + "inteiro resultado = 10 - (-a * b) / 5;";
+        ParseTree tree = parse(codigo);
+        Interpretador interpretador = new Interpretador();
+        interpretador.visit(tree);
+        Object resultado = interpretador.getVariavel("resultado");
+        assertEquals(12, ((Number) resultado).intValue());
+    }
 }

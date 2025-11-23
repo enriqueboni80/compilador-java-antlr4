@@ -13,7 +13,7 @@ comando
     ;
 
 // TIPOS DE VARIÁVEIS (3 TIPOS) E INSTANCIAMENTOS (OPCIONAL)
-tipo_var : 'inteiro' | 'real' | 'texto' ;
+tipo_var : INTEIRO | REAL | TEXTO ; // CORRIGIDO: Uso dos tokens INTEIRO, REAL, TEXTO
 declaracao_var : tipo_var ID ('=' expressao)? ;
 
 // ATRIBUIÇÃO DE VARIÁVEIS
@@ -26,19 +26,19 @@ bloco : comando* ;
 
 //ESTRUTURAS DE CONTROLE E REPETIÇÃO -> IF ELSE (Sintaxe: entao: e senao:)
 se_senao_stmt
-    : 'se' '(' expressao_booleana ')' 'entao:' bloco
-      ( 'senao:' bloco )?  // A parte 'senao' é opcional
-    'fimse'
+    : SE '(' expressao_booleana ')' ENTAO ':' bloco
+      ( SENAO ':' bloco )?
+    FIMSE
     ;
 
 // 2 - ESTRUTURAS DE CONTROLE E REPETIÇÃO -> WHILE (Sintaxe: enquanto (n>= 10) faca: <comando> fimenquanto)
 enquanto_stmt
-    : 'enquanto' '(' expressao_booleana ')' 'faca:' bloco 'fimenquanto'
+    : ENQUANTO '(' expressao_booleana ')' 'faca:' bloco FIMENQUANTO // CORRIGIDO: Uso dos tokens ENQUANTO e FIMENQUANTO
     ;
 
 // 3 - ESTRUTURAS DE CONTROLE E REPETIÇÃO -> FOR (Sintaxe: para i de 1 ate 10 faca: <comando> fimpara)
 para_stmt
-    : 'para' ID 'de' expressao 'ate' expressao ('passo' expressao)? 'faca:' bloco 'fimpara'
+    : PARA ID 'de' expressao ATE expressao (PASSO expressao)? 'faca:' bloco FIMPARA // CORRIGIDO: Uso dos tokens PARA, ATE, PASSO e FIMPARA
     ;
 
 // EXPRESSÃO BOOLEANA
@@ -46,8 +46,8 @@ expressao_booleana
     : expressao ('<' | '>' | '==' | '!=' | '<=' | '>=') expressao ;
 
 // REQUISITO: I/O (LEIA/ESCREVA)
-leia_stmt : 'leia' '(' ID ')' ;
-escreva_stmt : 'escreva' '(' expressao ')' ;
+leia_stmt : LEIA '(' ID ')' ; // CORRIGIDO: Uso do token LEIA
+escreva_stmt : ESCREVA '(' expressao ')' ; // CORRIGIDO: Uso do token ESCREVA
 
 //EXPRESSÕES E PRECEDÊNCIA
 expressao

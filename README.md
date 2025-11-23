@@ -82,7 +82,7 @@ fimenquanto
 ```
 #### 🔂 Laço para
 ```
-para i de 1 ate 10 passo 2 faca:
+para i de 1 ate 10 faca:
     escreva(i);
 fimpara
 ```

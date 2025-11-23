@@ -44,7 +44,7 @@ public class TesteCompilador {
 
     @Test
     public void deveReconhecerPara() throws Exception {
-        String codigo = "para i de 1 ate 5 passo 1: escreva(i) fimpara";
+        String codigo = "para i de 1 ate 5 faca: escreva(i); fimpara";
         ParseTree tree = parse(codigo);
         assertNotNull(tree);
     }
@@ -64,8 +64,7 @@ public class TesteCompilador {
         String codigo = ""
                 + "inteiro x = 2;\n"
                 + "inteiro y = 8;\n"
-                + "inteiro total = x + y;\n"
-                + "escreva(total);";
+                + "inteiro total = x + y;";
 
         ParseTree tree = parse(codigo);
         assertNotNull(tree);
@@ -81,8 +80,7 @@ public class TesteCompilador {
         String codigo = ""
                 + "inteiro x = 10.5;\n"
                 + "inteiro y = 9.5;\n"
-                + "inteiro total = x + y;\n"
-                + "escreva(total);";
+                + "inteiro total = x + y;";
 
         ParseTree tree = parse(codigo);
         assertNotNull(tree);

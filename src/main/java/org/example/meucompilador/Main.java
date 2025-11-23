@@ -9,21 +9,7 @@ import org.example.meucompilador.parser.MeuCompiladorParser;
 public class Main {
     public static void main(String[] args) throws Exception {
         String source =
-                "inteiro idade = 25;\n"
-                        + "real altura = 1.75;\n"
-                        + "escreva(altura);\n"
-                        + "escreva(\"Iniciando checagem...\");\n"
-                        + "se (idade > 18) entao:\n"
-                        + "escreva(altura * 2);\n"
-                        + "enquanto (idade < 30) faca:\n"
-                        + "idade = idade + 1;\n"
-                        + "fimenquanto\n"
-                        + "senao:\n"
-                        + "escreva(\"Menor de idade\");\n"
-                        + "fimse\n"
-                        + "para i de 1 ate 10 faca:\n"
-                        + "escreva(i);\n"
-                        + "fimpara\n";
+                "escreva(\"ATENÇÃO: Siga as regras de código do README.md. Testes unitários estão na pasta 'src\\tests'.\");";
 
         // 1. CRIA LEXER
         MeuCompiladorLexer lexer = new MeuCompiladorLexer(CharStreams.fromString(source));
@@ -32,7 +18,7 @@ public class Main {
         MeuCompiladorParser parser = new MeuCompiladorParser(tokens);
         // 3. IMPRIME ÁRVORE SINTATICA
         ParseTree tree = parser.programa();
-        System.out.println("Análise concluida com sucesso!");
+        System.out.println("\nAnálise concluida com sucesso!");
         System.out.println(tree.toStringTree(parser));
         // 4. EXECUTA CÓDIGO FONTE / TOKENS
         executar(source);
@@ -65,10 +51,10 @@ public class Main {
         } else {
             System.out.println("✅ COMPILAÇÃO BEM-SUCEDIDA! (Sintaxe OK)");
             // 4. EXECUÇÃO (ANTLR VISITOR) | SAÍDA DE DADOS
-            System.out.println("\n--- INICIANDO EXECUÇÃO (SAÍDA DE DADOS) ---");
+            System.out.println("\n--- INICIANDO EXECUÇÃO (SAÍDA DE DADOS) ---\n");
             Interpretador interpretador = new Interpretador();
             interpretador.visit(tree);
-            System.out.println("--- EXECUÇÃO FINALIZADA ---");
+            System.out.println("\n--- EXECUÇÃO FINALIZADA ---\n");
         }
     }
 }

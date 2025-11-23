@@ -14,7 +14,6 @@ public class BaseTestsUtils {
         MeuCompiladorParser parser = new MeuCompiladorParser(tokens);
         parser.removeErrorListeners();
         parser.addErrorListener(new ThrowingErrorListener());
-
         return parser.programa();
     }
 

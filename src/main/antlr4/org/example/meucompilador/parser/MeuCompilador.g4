@@ -26,8 +26,9 @@ bloco : comando* ;
 
 //ESTRUTURAS DE CONTROLE E REPETIÇÃO -> IF ELSE (Sintaxe: entao: e senao:)
 se_senao_stmt
-    : 'se' '(' expressao_booleana ')' 'entao:' bloco 'fimse'
-    | 'se' '(' expressao_booleana ')' 'entao:' bloco 'senao:' bloco 'fimse'
+    : 'se' '(' expressao_booleana ')' 'entao:' bloco
+      ( 'senao:' bloco )?  // A parte 'senao' é opcional
+    'fimse'
     ;
 
 // 2 - ESTRUTURAS DE CONTROLE E REPETIÇÃO -> WHILE (Sintaxe: enquanto (n>= 10) faca: <comando> fimenquanto)

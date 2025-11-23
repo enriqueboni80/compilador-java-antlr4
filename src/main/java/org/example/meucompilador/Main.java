@@ -25,48 +25,38 @@ public class Main {
                         + "escreva(i);\n"
                         + "fimpara\n";
 
-        // 1. CRIA O LEXER
+        // 1. CRIA LEXER
         MeuCompiladorLexer lexer = new MeuCompiladorLexer(CharStreams.fromString(source));
-
-        // 2. FAZ O PARSER
+        // 2. FAZ PARSER
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         MeuCompiladorParser parser = new MeuCompiladorParser(tokens);
-
         // 3. IMPRIME ÁRVORE SINTATICA
         ParseTree tree = parser.programa();
         System.out.println("Análise concluida com sucesso!");
         System.out.println(tree.toStringTree(parser));
-
         // 4. EXECUTA CÓDIGO FONTE / TOKENS
         executar(source);
-
     }
     public static void executar(String codigoFonte) {
 
         CharStream input = CharStreams.fromString(codigoFonte);
-
         // 1. ANALISADOR LÉXICO
         MeuCompiladorLexer lexer = new MeuCompiladorLexer(input);
-
         CustomErrorListener lexerErrorListener = new CustomErrorListener();
         lexer.removeErrorListeners();
         lexer.addErrorListener(lexerErrorListener);
-
         CommonTokenStream tokens = new CommonTokenStream(lexer);
-
         // 2. ANALISADOR SINTÁTICO
         MeuCompiladorParser parser = new MeuCompiladorParser(tokens);
         CustomErrorListener parserErrorListener = new CustomErrorListener();
         parser.removeErrorListeners();
         parser.addErrorListener(parserErrorListener);
-
         ParseTree tree = null;
         try {
             tree = parser.programa();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
         // 3. RETORNO DA VERIFICAÇÃO E EXECUÇÃO
         if (lexerErrorListener.houveErros() || parserErrorListener.houveErros()) {
             System.out.println("❌ FALHA NA COMPILAÇÃO: ERROS ENCONTRADOS!");
